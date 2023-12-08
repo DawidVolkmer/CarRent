@@ -2,6 +2,8 @@
 {% load crispy_forms_tags %}
 {% load widget_tweaks %}
 {% load material_form %}
+{% load bootstrap4 %}
+{% bootstrap_css %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,17 +51,17 @@ background: linear-gradient(to right, #3fada8, #808080); /* W3C, IE 10+/ Edge, F
                         <div class="card">
                            <div class="col s12">
                       <div class="welcome card-panel z-depth-3">
-                        
-                          <span style="padding-left: 30%;" class="white-text"><font color="black" size="20">Register An Issue</font>
+
+                          <span class="white-text"><font color="black" size="20"><center>Register An Issue</center></font>
                       </span>
                       </div>
                     </div>
                             <div class="card-content">
-                            <form action="/repair/repair" method="POST">
+                            <form action="/repair/repair" method="POST" style="margin-top: 10%;">
                             {% csrf_token %}
-                            {{ form.as_p }}
+                            {% bootstrap_form form %}
                             <div class="row">
-                                    <div class="col s4 offset-s4 center">
+                                    <div class="col s4 center">
                                         <input type="submit" class="btn" value="Add">
                                     </div>
                                 </div>
